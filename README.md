@@ -1,6 +1,6 @@
 # Obsidian Atom Color
 
-A theme for Obsidian based on Obsidian Atom from [Kognise](https://github.com/kognise) and the Colored Folder snippet from [Lithou]([Kognise](https://github.com/kognise)). Thanks for their excellent work. 
+A theme for Obsidian based on Obsidian Atom from [Kognise](https://github.com/kognise) and the Colored Folder snippet from [Lithou](https://forum.obsidian.md/t/adding-color-to-obsidian-a-rainbow-of-possibility/12805/9). Thanks for their excellent work. 
 
  ![Screenshot dark](Dark.png)
  ![Screenshot light](Light.png)
