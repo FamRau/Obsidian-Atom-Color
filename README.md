@@ -9,6 +9,6 @@ A theme for Obsidian based on Obsidian Atom from [Kognise](https://github.com/ko
 
 1. Download obsidian.css to the theme folder ('your Obsidian folder/.themes')
 2. Download ColoredFolders.css to snippets folder ('your Obsidian folder/.snippets')
-3. In Obsidian, click Settings -> appereance and enable the AtomicColor Theme
-4. In Obsidian, click on Appereance -> enable the ColoredFolders snippet
+3. In Obsidian, click settings -> appereance and enable the AtomicColor theme
+4. In Obsidian, click on appereance -> enable the ColoredFolders snippet
 5. Pick either light or dark theme in Obsidian's appearance settings!
