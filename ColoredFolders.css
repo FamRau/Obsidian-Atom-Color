@@ -1,0 +1,182 @@
+/* Coloured Folders
+a CSS snippet by Lithou
+
+This will allow the colouring of the top level folders into sections that "drop down" when opened. 
+This is currently set to be the same colour regardless of theme, but you can change that by copy/pasting the colors from the root section into light/dark theme then changing them according to preference.
+The colours are rainbow coloured and 16 in number by default. They are shades such that white/lightgrey text shows up the best. Some have a bit let contrast (the lighter blue and the yellow) but should still be visible. Again, change them however you would like. 
+*/
+:root{
+    /* folder colours */
+    --Fold0: #d32f2fCC;
+    --Fold1: #c2185bCC;
+    --Fold2: #7b1fa2CC;
+    --Fold3: #512da8CC;
+    --Fold4: #303f9fCC;
+    --Fold5: #1976d2CC;
+    --Fold6: #0288d1CC;
+    --Fold7: #0097a7CC;
+    --Fold8: #00796bCC;
+    --Fold9: #388e3cCC;
+    --FoldA: #689f38CC;
+    --FoldB: #afb42bCC;
+    --FoldC: #f9ab25a1;
+    --FoldD: #ff8f00CC;
+    --FoldE: #ef6c00CC;
+    --FoldF: #d84315CC;
+    
+    --FoldText: rgb(226, 226, 226);
+    /* line styles for nesting indicators */
+    --nestlinesize1: dashed;
+    --nestlinestyle1: 1px;
+    --nestlinecolor1: rgba(139, 139, 139, 0.486);
+
+    --nestlinesize2: dashed;
+    --nestlinestyle2: 1px;
+    --nestlinecolor2: rgba(139, 139, 139, 0.486);
+
+    --nestlinesize3: dashed;
+    --nestlinestyle3: 1px;
+    --nestlinecolor3: rgba(139, 139, 139, 0.486);
+}
+
+/* Set up explorer container margins */
+.nav-files-container{margin: 0px 5px;}
+
+/* Remove collapse arrow from top level folders */
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title>.nav-folder-collapse-indicator{display: none;}
+
+
+/* Top Level Folder Titles */
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: large;
+        color: var(--FoldText);
+        padding-left: 3px;
+        margin-top: 7px; /* space between top level sections */
+        border-radius: 5px 5px 5px 5px; /*Gerhard changed from 5px 5px 0 0 to 5px 5px 5px 5px*/
+        }
+/* Nav Folder title content*/
+    .nav-folder-title-content{
+        font-size: large;
+    }
+
+
+/* Rounded borders */
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder.is-collapsed>.nav-folder-title{
+        border-radius: 5px;
+        }
+
+/* General Nav Folder Children (this is the part that expands from each top level folder) */
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children{
+    padding-left: 10px;
+    border-top: var(--FoldText) 0px solid; /*Gerhard changed from 1px to 0 px*/
+    border-radius: 0px 0px 5px 5px;
+    padding-bottom: 12px;
+} 
+
+.nav-file-title{
+    padding-left: 5px;
+    margin-left: 15px;
+}
+.nav-file-title-content{
+    font-size:large;
+}
+
+/* active file increase font size and removes normal highlight marker */
+    .nav-file-title.is-active{ 
+        background-color: #00000000;
+ }
+/* Adds hemisphere marker to active file instead */
+    .nav-file-title.is-active::before{
+        content: "";
+        width: 6px;
+        height:6px;
+        border-radius: 50%;
+        background-color: rgba(139, 139, 139, 0.486);
+        position: absolute;
+        left: 0px;
+        margin-top: 8px;}
+
+
+/* 16 Top level Folders By Starting Digit (0-F)
+These are set for me by leading number/letter which also ensures they are in the correct order when sorted alphabetically
+You can change these to match your use case.
+*/
+/*    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="0"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="0"] + .nav-folder-children{
+    background-color: var(--Fold0);}*/
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="0"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="0"] {
+    background-color: var(--Fold0);}
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="1"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="1"] {
+    background-color: var(--Fold0);}
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="2"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="2"]{
+    background-color: var(--Fold2);}   
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="3"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="3"]{
+    background-color: var(--Fold3);}   
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="4"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="4"]{
+    background-color: var(--Fold4);}   
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="5"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="5"]{
+    background-color: var(--Fold5);}   
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="6"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="6"]{
+    background-color: var(--Fold6);}   
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="7"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="7"]{
+    background-color: var(--Fold7);}   
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="8"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="8"]{
+    background-color: var(--Fold8);}   
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="9"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="9"]{
+    background-color: var(--Fold9);}   
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="A"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="A"]{
+    background-color: var(--FoldA);} 
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="D"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="D"]{
+    background-color: var(--FoldB);} 
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="V"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="V"]{
+    background-color: var(--FoldC);} 
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="D"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="D"]{
+    background-color: var(--FoldD);} 
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="B"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="B"]{
+    background-color: var(--FoldE);} 
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="F"],
+    .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="F"]{
+    background-color: var(--FoldF);} 
+
+/* Scrollbars eliminated */
+::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+}
+
+/* Relationship lines for 2nd, 3rd, and 4th level folders */
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-file{
+    border-left: var(--nestlinestyle1) var(--nestlinesize1) var(--nestlinecolor1);
+}
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder{
+    border-left: var(--nestlinestyle1) var(--nestlinesize1) var(--nestlinecolor1);
+}
+
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-file{
+    border-left: var(--nestlinestyle2) var(--nestlinesize2) var(--nestlinecolor2);}
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder{
+    border-left: var(--nestlinestyle2) var(--nestlinesize2) var(--nestlinecolor2);
+}
+
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-file{
+    border-left: var(--nestlinestyle3) var(--nestlinesize3) var(--nestlinecolor3);
+}
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder{
+    border-left: var(--nestlinestyle3) var(--nestlinesize3) var(--nestlinecolor3);
+}
